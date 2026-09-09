@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import { FloatingBackground } from '@/components/ui/FloatingBackground';
 import { StaticDecorations } from '@/components/ui/StaticDecorations';
 import { varFadeUp, varScaleIn, varStagger, EASE_OUT } from '@/lib/motion';
+import { SiteNav } from '@/components/layout/SiteNav';
 
 // ── How it works steps ────────────────────────────────────────────────────────
 
@@ -138,11 +139,12 @@ function SoundWaveDecoration() {
 export function HomeContent() {
   return (
     <main
-      className="relative min-h-screen"
-     // style={{ background: 'var(--bg-page)' }}
+      className="relative min-h-screen overflow-hidden bg-[var(--bg-page)]"
+     style={{ background: 'var(--bg-page)' }}
     > 
       <FloatingBackground />
       <StaticDecorations />
+      <SiteNav />
 
       <div className="relative z-10 mx-auto max-w-5xl px-5 sm:px-8">
 
@@ -466,3 +468,5 @@ export function HomeContent() {
     </main>
   );
 }
+
+

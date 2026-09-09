@@ -187,3 +187,294 @@ export function StaticDecorations() {
     </div>
   );
 }
+
+
+
+// 'use client';
+
+// export function StaticDecorations() {
+//   return (
+//     <div
+//       className="
+//         pointer-events-none
+//         absolute
+//         inset-0
+//         overflow-hidden
+//         z-[1]
+//       "
+//       aria-hidden="true"
+//     >
+
+//       {/* Large peach background shape */}
+
+//       <div
+//         className="
+//           absolute
+//           left-[-120px]
+//           top-[260px]
+//           h-[310px]
+//           w-[310px]
+//           rounded-full
+//         "
+//         style={{
+//           background:
+//             'rgba(255, 140, 120, 0.18)',
+//         }}
+//       />
+
+
+//       {/* Small yellow circle — right */}
+
+//       <div
+//         className="
+//           absolute
+//           right-[-5px]
+//           top-[455px]
+//           h-[62px]
+//           w-[62px]
+//           rounded-full
+//         "
+//         style={{
+//           background: 'rgba(245, 197, 24, 0.9)',
+//         }}
+//       />
+
+
+//       {/* Yellow triangle */}
+
+//       <div
+//         className="absolute right-[80px] top-[485px]"
+//         style={{
+//           width: 0,
+//           height: 0,
+//           borderLeft: '28px solid transparent',
+//           borderRight: '28px solid transparent',
+//           borderBottom: '42px solid rgba(245, 197, 24, 0.8)',
+//         }}
+//       />
+
+
+//       {/* Coral star */}
+
+//       <svg
+//         className="
+//           absolute
+//           left-[48%]
+//           top-[145px]
+//         "
+//         width="70"
+//         height="70"
+//         viewBox="0 0 24 24"
+//         fill="rgba(255, 110, 85, 0.72)"
+//       >
+//         <path d="M12 2l2.4 7.2H22l-6 4.8 2.3 7.2L12 16.8 5.7 21.2 8 14 2 9.2h7.6L12 2z" />
+//       </svg>
+
+
+//       {/* Decorative speech bubble */}
+
+//       <svg
+//         className="
+//           absolute
+//           left-[105px]
+//           top-[380px]
+//         "
+//         width="75"
+//         height="75"
+//         viewBox="0 0 24 24"
+//         fill="none"
+//       >
+//         <path
+//           d="
+//             M4 4h11
+//             a2.5 2.5 0 0 1 2.5 2.5
+//             v6
+//             a2.5 2.5 0 0 1-2.5 2.5
+//             H9l-4 3v-3H4
+//             A2.5 2.5 0 0 1 1.5 12.5
+//             v-6
+//             A2.5 2.5 0 0 1 4 4z
+//           "
+//           fill="rgba(255, 112, 87, 0.55)"
+//           stroke="rgba(26,26,46,0.18)"
+//           strokeWidth="1"
+//         />
+//       </svg>
+
+
+//       {/* Small coral vertical bars */}
+
+//       <div
+//         className="
+//           absolute
+//           left-[195px]
+//           top-[598px]
+//           flex
+//           items-end
+//           gap-[3px]
+//         "
+//       >
+//         {[28, 42, 55, 37, 60, 45, 32, 51, 39, 28].map(
+//           (height, index) => (
+//             <div
+//               key={index}
+//               className="w-[4px] rounded-full"
+//               style={{
+//                 height,
+//                 background: 'var(--coral)',
+//                 opacity: 0.65,
+//               }}
+//             />
+//           ),
+//         )}
+//       </div>
+
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+//export function StaticDecorations() {
+//   return (
+//     <div
+//       className="
+//         pointer-events-none
+//         absolute
+//         inset-0
+//         overflow-hidden
+//         z-[1]
+//       "
+//       aria-hidden="true"
+//     >
+
+//       {/* Large peach background shape */}
+
+//       <div
+//         className="
+//           absolute
+//           left-[-120px]
+//           top-[260px]
+//           h-[310px]
+//           w-[310px]
+//           rounded-full
+//         "
+//         style={{
+//           background:
+//             'rgba(255, 140, 120, 0.18)',
+//         }}
+//       />
+
+
+//       {/* Small yellow circle — right */}
+
+//       <div
+//         className="
+//           absolute
+//           right-[-5px]
+//           top-[455px]
+//           h-[62px]
+//           w-[62px]
+//           rounded-full
+//         "
+//         style={{
+//           background: 'rgba(245, 197, 24, 0.9)',
+//         }}
+//       />
+
+
+//       {/* Yellow triangle */}
+
+//       <div
+//         className="absolute right-[80px] top-[485px]"
+//         style={{
+//           width: 0,
+//           height: 0,
+//           borderLeft: '28px solid transparent',
+//           borderRight: '28px solid transparent',
+//           borderBottom: '42px solid rgba(245, 197, 24, 0.8)',
+//         }}
+//       />
+
+
+//       {/* Coral star */}
+
+//       <svg
+//         className="
+//           absolute
+//           left-[48%]
+//           top-[145px]
+//         "
+//         width="70"
+//         height="70"
+//         viewBox="0 0 24 24"
+//         fill="rgba(255, 110, 85, 0.72)"
+//       >
+//         <path d="M12 2l2.4 7.2H22l-6 4.8 2.3 7.2L12 16.8 5.7 21.2 8 14 2 9.2h7.6L12 2z" />
+//       </svg>
+
+
+//       {/* Decorative speech bubble */}
+
+//       <svg
+//         className="
+//           absolute
+//           left-[105px]
+//           top-[380px]
+//         "
+//         width="75"
+//         height="75"
+//         viewBox="0 0 24 24"
+//         fill="none"
+//       >
+//         <path
+//           d="
+//             M4 4h11
+//             a2.5 2.5 0 0 1 2.5 2.5
+//             v6
+//             a2.5 2.5 0 0 1-2.5 2.5
+//             H9l-4 3v-3H4
+//             A2.5 2.5 0 0 1 1.5 12.5
+//             v-6
+//             A2.5 2.5 0 0 1 4 4z
+//           "
+//           fill="rgba(255, 112, 87, 0.55)"
+//           stroke="rgba(26,26,46,0.18)"
+//           strokeWidth="1"
+//         />
+//       </svg>
+
+
+//       {/* Small coral vertical bars */}
+
+//       <div
+//         className="
+//           absolute
+//           left-[195px]
+//           top-[598px]
+//           flex
+//           items-end
+//           gap-[3px]
+//         "
+//       >
+//         {[28, 42, 55, 37, 60, 45, 32, 51, 39, 28].map(
+//           (height, index) => (
+//             <div
+//               key={index}
+//               className="w-[4px] rounded-full"
+//               style={{
+//                 height,
+//                 background: 'var(--coral)',
+//                 opacity: 0.65,
+//               }}
+//             />
+//           ),
+//         )}
+//       </div>
+
+//     </div>
+//   );
+// }
