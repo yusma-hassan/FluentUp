@@ -13,8 +13,10 @@ export function NumberedGrid({ count, onSelect, selectedSlot, disabled }: Number
 
   return (
     <div
-      className="grid gap-3"
-      style={{ gridTemplateColumns: `repeat(auto-fill, minmax(${count > 6 ? '4.5rem' : '5.5rem'}, 1fr))` }}
+      className="grid gap-5"
+style={{
+  gridTemplateColumns: `repeat(auto-fill, minmax(${count > 6 ? '5.5rem' : '6.5rem'}, 1fr))`,
+}}
       role="group"
     >
       {Array.from({ length: count }, (_, i) => {

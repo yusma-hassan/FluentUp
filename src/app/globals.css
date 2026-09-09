@@ -484,3 +484,84 @@ body {
     animation-duration: 22s;
   }
 }
+/* FluentUp colorful selection cards */
+.framework-grid button {
+  position: relative;
+  width: 100%;
+  min-height: 125px;
+  min-width: 0;
+
+  border: 2.5px solid #000 !important;
+  border-radius: 18px !important;
+
+  color: #000 !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+
+  box-shadow: 6px 6px 0 #000 !important;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+/* Bright card colors */
+.framework-grid button:nth-child(1) {
+  background: #ffd166 !important;
+}
+
+.framework-grid button:nth-child(2) {
+  background: #ff8fa3 !important;
+}
+
+.framework-grid button:nth-child(3) {
+  background: #7bdff2 !important;
+}
+
+.framework-grid button:nth-child(4) {
+  background: #b8e986 !important;
+}
+
+.framework-grid button:nth-child(5) {
+  background: #cdb4db !important;
+}
+
+.framework-grid button:nth-child(6) {
+  background: #ffb997 !important;
+}
+
+.framework-grid button:nth-child(7) {
+  background: #a0e7e5 !important;
+}
+
+.framework-grid button:nth-child(8) {
+  background: #f7a072 !important;
+}
+
+.framework-grid button:nth-child(9) {
+  background: #ffd6a5 !important;
+}
+
+.framework-grid button:nth-child(10) {
+  background: #caffbf !important;
+}
+
+/* Hover */
+.framework-grid button:hover:not(:disabled) {
+  transform: translate(-3px, -3px) rotate(-1deg);
+  box-shadow: 9px 9px 0 #000 !important;
+  filter: brightness(1.08) saturate(1.08);
+}
+
+/* Press */
+.framework-grid button:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0 #000 !important;
+}
+
+/* Selected card */
+.framework-grid button.selected {
+  background: #ff5c3a !important;
+  color: #fff !important;
+}

@@ -1,9 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
+
 
 type MascotTarget = {
   href: string;
@@ -314,7 +316,20 @@ export function SiteNav() {
                 href="/"
                 className="font-serif text-[20px] font-bold tracking-wide text-white transition-opacity duration-200 hover:opacity-90"
               >
-                Fluent<span className="text-[#F5C518]">Up</span>
+                <span className="flex items-center gap-2">
+  <Image
+    src="/images/fluentup-logo.png"
+    alt="FluentUp"
+    width={38}
+    height={38}
+    priority
+    className="h-[38px] w-[38px] object-contain"
+  />
+
+  <span>
+    Fluent<span className="text-[#F5C518]">Up</span>
+  </span>
+</span>
               </Link>
 
               {/* Navigation */}

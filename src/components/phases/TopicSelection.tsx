@@ -34,7 +34,9 @@ export function TopicSelection() {
   }, [revealedTopic, dispatch]);
 
   return (
-    <section className="mx-auto flex w-full max-w-lg flex-col gap-7 px-5 py-8 sm:py-12 fu-fade-up">
+    // <section className="mx-auto flex w-full max-w-lg flex-col gap-7 px-5 py-8 sm:py-12 fu-fade-up">
+    <section className="topic-screen mx-auto flex w-full max-w-lg flex-col gap-7 px-5 py-8 sm:py-12 fu-fade-up">
+      
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[var(--navy)]">
           Pick a Topic
@@ -43,7 +45,9 @@ export function TopicSelection() {
           Choose a number. The challenge begins automatically.
         </p>
       </div>
+      
 
+    <div className="framework-grid mx-auto w-full max-w-xl">
       <NumberedGrid
         count={topicSlots.length}
         onSelect={handleSelect}
@@ -51,6 +55,7 @@ export function TopicSelection() {
         revealedLabel={null}
         disabled={selectedSlot !== null}
       />
+</div>
 
       {revealedTopic && (
         <div
