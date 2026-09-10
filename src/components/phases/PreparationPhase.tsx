@@ -165,7 +165,18 @@ export function PreparationPhase() {
           position: relative;
           min-height: calc(100vh - 64px);
           overflow: hidden;
-          background: #f7f2e8;
+          background:
+            radial-gradient(
+              circle at 18% 28%,
+              rgba(245, 197, 24, 0.055),
+              transparent 25%
+            ),
+            radial-gradient(
+              circle at 52% 82%,
+              rgba(201, 182, 228, 0.08),
+              transparent 28%
+            ),
+            #f7f2e8;
           isolation: isolate;
         }
 
@@ -173,7 +184,8 @@ export function PreparationPhase() {
           position: relative;
           z-index: 10;
           width: min(100%, 700px);
-          margin-left: clamp(24px, 8vw, 120px);
+          max-width: none;
+          margin-left: clamp(0px, 2vw, 30px);
           margin-right: 0;
         }
 
@@ -203,44 +215,72 @@ export function PreparationPhase() {
         .prep-shelf-purple {
           position: absolute;
           inset: 0;
+          filter:
+            drop-shadow(-26px 22px 30px rgba(48, 32, 61, 0.18))
+            drop-shadow(-8px 8px 12px rgba(48, 32, 61, 0.12));
         }
 
         .prep-shelf-purple path {
           fill: #30203d;
-          filter:
-            drop-shadow(-18px 18px 26px rgba(48, 32, 61, 0.16));
+          stroke: rgba(255, 255, 255, 0.045);
+          stroke-width: 3;
+          stroke-linejoin: round;
+        }
+
+        .prep-shelf-purple::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          background:
+            radial-gradient(
+              ellipse at 72% 18%,
+              rgba(255, 255, 255, 0.045),
+              transparent 34%
+            );
+          opacity: 0.8;
         }
 
 
         /* ============================================================
-           QUOTATION ON PURPLE SHAPE
+           QUOTE ON PURPLE SHAPE
         ============================================================ */
 
-.prep-quote {
-  position: absolute;
-  z-index: 5;
+        .prep-quote {
+          position: absolute;
+          z-index: 5;
 
-  top: 7%;
-  right: 7%;
+          top: 5%;
+          right: 7%;
 
-  width: min(34vw, 430px);
-  height: 86%;
+          width: min(34vw, 430px);
+          height: 90%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly;
 
-  padding: 25px;
+          padding: 20px;
 
-  color: #f5c518;
+          color: #f5c518;
 
-  font-size: clamp(2.5rem, 4.5vw, 4.8rem);
-  line-height: 1.35;
-  font-weight: 900;
-  letter-spacing: -0.025em;
+          font-size: clamp(2.5rem, 4.5vw, 4.8rem);
+          line-height: 1.05;
+          font-weight: 900;
+          letter-spacing: -0.025em;
 
-  text-align: center;
-}
+          text-align: center;
+
+          text-shadow:
+            2px 3px 0 rgba(0, 0, 0, 0.08),
+            0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .prep-quote span {
+          display: block;
+          white-space: nowrap;
+        }
 
 
         /* ============================================================
@@ -558,39 +598,133 @@ export function PreparationPhase() {
            TIMER ACCENTS
         ============================================================ */
 
-        .prep-timer-accent {
+        .prep-action-button {
+  border: 2.5px solid var(--navy);
+  border-radius: var(--radius-md);
+  background: linear-gradient(
+    145deg,
+    #d84b3f 0%,
+    #a82f3c 100%
+  );
+  color: white;
+  font-weight: 800;
+  padding: 10px 18px;
+  box-shadow:
+    4px 4px 0 var(--navy),
+    8px 9px 18px rgba(26, 26, 46, 0.12);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    filter 160ms ease;
+}
+
+.prep-action-button:hover {
+  filter: brightness(1.06);
+  transform: translateY(-2px);
+  box-shadow:
+    5px 6px 0 var(--navy),
+    9px 11px 20px rgba(26, 26, 46, 0.14);
+}
+
+.prep-action-button:active {
+  transform: translate(2px, 2px);
+  box-shadow:
+    2px 2px 0 var(--navy),
+    4px 5px 12px rgba(26, 26, 46, 0.10);
+}
+
+
+        /* ============================================================
+           BUTTONS
+        ============================================================ */
+
+       .prep-action-button {
+  border: 2.5px solid var(--navy) !important;
+  border-radius: var(--radius-md);
+  background: #c83f3f !important;
+  color: #ffffff !important;
+  font-weight: 800;
+  padding: 10px 18px;
+  box-shadow:
+    5px 5px 0 var(--navy),
+    9px 10px 18px rgba(26, 26, 46, 0.12);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.prep-action-button:hover {
+  background: #d84b3f !important;
+  transform: translateY(-2px);
+  box-shadow:
+    6px 7px 0 var(--navy),
+    10px 12px 20px rgba(26, 26, 46, 0.14);
+}
+
+.prep-action-button:active {
+  background: #a82f3c !important;
+  transform: translate(2px, 2px);
+  box-shadow:
+    2px 2px 0 var(--navy),
+    4px 5px 12px rgba(26, 26, 46, 0.10);
+}
+
+
+        /* ============================================================
+           FRAMEWORK CARD
+        ============================================================ */
+
+        .prep-framework-card {
+          position: relative;
+          overflow: hidden;
+
+          background: #c94f4f;
+
+          border: 2.5px solid var(--navy);
+          border-radius: var(--radius-md);
+
+          box-shadow:
+            7px 7px 0 var(--navy),
+            14px 16px 26px rgba(26, 26, 46, 0.14);
+        }
+
+        .prep-framework-card::before {
+          content: '';
           position: absolute;
-          pointer-events: none;
-          border: 2px solid var(--navy);
-        }
+          top: -40px;
+          right: -30px;
 
-        .prep-timer-accent-one {
-          width: 52px;
-          height: 52px;
-          top: -18px;
-          right: 26px;
+          width: 150px;
+          height: 150px;
+
           border-radius: 50%;
-          background: var(--coral);
-          transform: rotate(18deg);
+
+          background: rgba(255, 255, 255, 0.10);
         }
 
-        .prep-timer-accent-two {
-          width: 42px;
-          height: 42px;
-          bottom: -13px;
-          left: 30px;
-          border-radius: 48% 52% 45% 55%;
-          background: #c9b6e4;
-          transform: rotate(-16deg);
+        .prep-framework-card::after {
+          content: '';
+          position: absolute;
+          bottom: -65px;
+          left: -40px;
+
+          width: 180px;
+          height: 180px;
+
+          border-radius: 50%;
+
+          background: rgba(0, 0, 0, 0.06);
+        }
+
+        .prep-framework-content {
+          position: relative;
+          z-index: 2;
         }
 
 
         /* ============================================================
            FRAMEWORK LIST
-           
-           The numbers are supplied manually by i + 1.
-           Removing the browser's default list markers prevents
-           duplicated numbering.
         ============================================================ */
 
         .prep-steps-list {
@@ -706,9 +840,19 @@ export function PreparationPhase() {
           }
 
           .prep-quote {
-            right: clamp(20px, 4vw, 50px);
-            width: min(27vw, 280px);
-            font-size: clamp(1.25rem, 2.8vw, 2rem);
+            top: 6%;
+            right: 4%;
+            width: min(29vw, 300px);
+            height: 88%;
+            padding: 14px;
+            font-size: clamp(1.3rem, 2.8vw, 2rem);
+            line-height: 1.05;
+          }
+
+          .prep-action-button {
+            min-width: 78px;
+            min-height: 40px;
+            padding: 8px 16px;
           }
         }
 
@@ -739,11 +883,17 @@ export function PreparationPhase() {
           }
 
           .prep-quote {
-            top: 30%;
-            right: 16px;
+            top: 8%;
+            right: 12px;
             width: 43%;
-            font-size: clamp(1.05rem, 4.8vw, 1.55rem);
+            height: 84%;
+            padding: 8px;
+            font-size: clamp(1rem, 4.8vw, 1.55rem);
             line-height: 1.05;
+          }
+
+          .prep-quote span {
+            white-space: normal;
           }
 
           .prep-timer-wrapper {
@@ -817,6 +967,19 @@ export function PreparationPhase() {
             right: 19%;
             bottom: 20%;
           }
+
+          .prep-action-button {
+            min-width: 76px;
+            min-height: 40px;
+            padding: 8px 15px;
+            font-size: 0.875rem;
+          }
+
+          .prep-framework-card {
+            box-shadow:
+              5px 5px 0 var(--navy),
+              10px 12px 20px rgba(26, 26, 46, 0.13);
+          }
         }
 
 
@@ -841,15 +1004,32 @@ export function PreparationPhase() {
             height: min(78vw, 280px);
           }
 
-          .prep-shelf-purple path {
+          .prep-shelf-purple {
             filter:
-              drop-shadow(-10px 12px 18px rgba(48, 32, 61, 0.13));
+              drop-shadow(-14px 15px 22px rgba(48, 32, 61, 0.16))
+              drop-shadow(-5px 6px 10px rgba(48, 32, 61, 0.10));
           }
 
           .prep-quote {
-            right: 12px;
+            top: 8%;
+            right: 9px;
             width: 44%;
+            height: 84%;
+            padding: 5px;
             font-size: 1rem;
+            line-height: 1.02;
+          }
+
+          .prep-action-button {
+            min-width: 72px;
+            min-height: 38px;
+            padding: 7px 13px;
+          }
+
+          .prep-framework-card {
+            box-shadow:
+              4px 4px 0 var(--navy),
+              8px 10px 17px rgba(26, 26, 46, 0.12);
           }
         }
 
@@ -868,6 +1048,10 @@ export function PreparationPhase() {
           .prep-timer-card,
           .prep-timer-digits.urgent {
             animation: none;
+          }
+
+          .prep-action-button {
+            transition: none;
           }
         }
 
@@ -929,7 +1113,12 @@ export function PreparationPhase() {
           </div>
 
           <div className="prep-quote">
-            Words are small,but their impact is not.Choose them wisely.
+            <span>Words are</span>
+            <span>small, but</span>
+            <span>their impact</span>
+            <span>is not.</span>
+            <span>Choose</span>
+            <span>them wisely</span>
           </div>
 
         </div>
@@ -992,14 +1181,16 @@ export function PreparationPhase() {
         <div className="prep-content mx-auto flex w-full max-w-lg flex-col gap-6 px-5 py-8 sm:py-12 fu-fade-up">
 
           <div className="flex flex-col gap-1 text-center">
-            <h1 className="text-2xl font-extrabold tracking-tight text-[var(--navy)] sm:text-3xl">
-              Preparation Time
-            </h1>
+  <h1 className="text-3xl font-extrabold tracking-tight text-[var(--navy)] sm:text-4xl">
+    Preparation Time
+  </h1>
 
-            <p className="text-sm text-[var(--text-secondary)]">
-              Get ready. You’ve got this.
-            </p>
-          </div>
+  <p className="text-base text-[var(--text-secondary)] sm:text-lg">
+    Get ready. You’ve got this.
+  </p>
+</div>
+
+          
 
 
           {/* ========================================================
@@ -1082,60 +1273,58 @@ export function PreparationPhase() {
 
 
             <div className="flex flex-wrap justify-center gap-3">
+  <button
+    type="button"
+    onClick={() => {
+      addTime(ADD_SECONDS);
+      dispatch({
+        type: 'ADD_PREPARATION_TIME',
+      });
+    }}
+    className="prep-action-button text-sm"
+  >
+    +{ADD_SECONDS}s
+  </button>
 
-              <button
-                type="button"
-                onClick={() => {
-                  addTime(ADD_SECONDS);
-                  dispatch({
-                    type: 'ADD_PREPARATION_TIME',
-                  });
-                }}
-                className="fu-btn-secondary text-sm"
-              >
-                +{ADD_SECONDS}s
-              </button>
+  <button
+    type="button"
+    onClick={skip}
+    className="prep-action-button text-sm"
+  >
+    Skip
+  </button>
+</div>
+          </div>
 
-              <button
-                type="button"
-                onClick={skip}
-                className="fu-btn-tertiary text-sm"
-              >
-                Skip
-              </button>
+
+          {/* ========================================================
+              FRAMEWORK STEPS
+          ========================================================= */}
+
+          <div className="prep-framework-card p-4">
+
+            <div className="prep-framework-content">
+
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-wider text-white">
+                {selectedFramework.name}
+              </p>
+
+              <div className="space-y-2">
+                {selectedFramework.structuralSteps.map((step, i) => (
+                  <div
+                    key={i}
+                    className="text-sm text-white"
+                  >
+                    {step}
+                  </div>
+                ))}
+              </div>
 
             </div>
 
           </div>
 
-
-         {/* ========================================================
-    FRAMEWORK STEPS
-========================================================= */}
-
-<div
-  className="rounded-[var(--radius-md)] border-[2.5px] border-[var(--navy)] p-4 shadow-[var(--shadow)]"
-  style={{ background: 'var(--teal)' }}
->
-  <p className="mb-3 text-[11px] font-bold uppercase tracking-wider text-white">
-    {selectedFramework.name}
-  </p>
-
-  <div className="space-y-2">
-    {selectedFramework.structuralSteps.map((step, i) => (
-      <div
-        key={i}
-        className="text-sm text-white"
-      >
-        {step}
-      </div>
-    ))}
-  </div>
-</div>
-
-          </div>
-
-
+        </div>
 
       </section>
     </>
