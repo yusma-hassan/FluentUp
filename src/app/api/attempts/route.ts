@@ -132,8 +132,8 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     };
 
     const { error: dbError } = await supabase
-      .from('challenge_attempts')
-      .insert(insert);
+  .from('challenge_attempts')
+  .insert(insert as never);
 
     if (dbError) {
       // No raw DB error details reach the client
