@@ -13,6 +13,8 @@
  * Returns the (potentially mutated) response and the authenticated user (or
  * null when unauthenticated).
  */
+
+
 import { createServerClient } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
 import type { Database } from './types';
@@ -20,6 +22,9 @@ import type { Database } from './types';
 export async function updateSession(request: NextRequest) {
   // Start with an unmodified response — we may add Set-Cookie headers.
   let supabaseResponse = NextResponse.next({ request });
+
+  console.log("SUPABASE URL EXISTS:", !!process.env.NEXT_PUBLIC_SUPABASE_URL);
+console.log("SUPABASE KEY EXISTS:", !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
   const supabase = createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
