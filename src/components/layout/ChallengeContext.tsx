@@ -458,7 +458,7 @@ import type {
    Change this back to false when you want to use Gemini again.
 ────────────────────────────────────────────────────────────────────────── */
 
-const TOPIC_PREVIEW_MODE = true;
+const TOPIC_PREVIEW_MODE = false;
 
 /* ──────────────────────────────────────────────────────────────────────────
    Temporary preview topics
