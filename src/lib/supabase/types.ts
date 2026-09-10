@@ -65,6 +65,22 @@ export type ChallengeAttemptInsert = Omit<ChallengeAttemptRow, 'id' | 'completed
 
 // ── Typed Database helper (used with createClient generics) ───────────────────
 
+// export interface Database {
+//   public: {
+//     Tables: {
+//       challenge_attempts: {
+//         Row: ChallengeAttemptRow;
+//         Insert: ChallengeAttemptInsert;
+//         Update: Partial<ChallengeAttemptInsert>;
+//         Relationships: [];
+//       };
+//     };
+//     Views: Record<string, never>;
+//     Functions: Record<string, never>;
+//   };
+// }
+
+
 export interface Database {
   public: {
     Tables: {
@@ -72,9 +88,12 @@ export interface Database {
         Row: ChallengeAttemptRow;
         Insert: ChallengeAttemptInsert;
         Update: Partial<ChallengeAttemptInsert>;
+        Relationships: [];
       };
     };
-    Views: Record<string, never>;
-Functions: Record<string, never>;
+    Views: {};
+    Functions: {};
+    Enums: {};
+    CompositeTypes: {};
   };
 }

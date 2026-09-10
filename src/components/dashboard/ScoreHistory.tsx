@@ -137,7 +137,11 @@ export function ScoreHistory({ points }: ScoreHistoryProps) {
                   stroke="var(--navy)"
                   strokeWidth="1.5"
                 >
-                  <title>{`${points[i].frameworkName} — ${s}/100 (${new Date(points[i].completedAt).toLocaleDateString()})`}</title>
+                 <title>
+  {`${points[i].frameworkName} — ${s}/100 (${new Date(points[i].completedAt)
+    .toISOString()
+    .slice(0, 10)})`}
+</title>
                 </circle>
               );
             })}
